@@ -1,6 +1,7 @@
 body {
   font-family: "Poppins";
   font-size: 14px;
+  overflow-x: hidden;
 }
 
 /* ============ NAVBAR ============ */
@@ -9,9 +10,10 @@ body {
 }
 
 .ubuy-logo {
-  width: 110px;
+  width: 80px;
   height: auto;
   max-height: 50px;
+  
 }
 
 .explore-btn img {
@@ -24,23 +26,36 @@ body {
 .search-bar input {
   font-size: 13px;
   line-height: 1.5;
+  font-weight: 400;
   border: none;
   outline: none;
 }
 
 .navbar-ul .nav-link {
   font-size: 14px;
-  font-weight: 500;
-  color: #151515;
+  font-weight: normal;
+  color: #000 !important;
 }
 
 .navbar-ul .nav-item {
   gap: 4px;
 }
 
+@media (max-width: 576px) {
+  .navbar-ul .nav-item {
+    gap: 1px !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 2500px) {
+  .navbar-center {
+    height: 50px !important;
+  }
+}
+
 .nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 /* hide short labels by default */
@@ -49,6 +64,16 @@ body {
   font-size: 16px;
   margin-left: 3px;
   margin-right: 4px;
+}
+
+@media (min-width: 1440px) and (max-width: 2500px) {
+  .navbar-ul {
+    gap: 33px !important;
+  }
+
+  #searchInput{
+    padding: 4px 0px;
+  }
 }
 
 /* ---- Below 1200px ---- */
@@ -66,12 +91,52 @@ body {
   }
 
   .navbar-ul {
-    gap: 10px;
+    gap: 10px !important;
   }
 
   .nav-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.long-text {
+  color: #000;
+  font-weight: normal;
+}
+
+@media (min-width: 1440px) and (max-width: 2500px) {
+  .search-bar,
+  .navbar-center {
+    margin-left: 3% !important;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2550px) {
+  .search-bar {
+    /* padding: 0 3%; */
+    /* margin-left: 5% !important; */
+  }
+}
+
+.header-right {
+  max-width: 425px;
+  /* min-width: 169px; */
+}
+
+.country-menu {
+  color: #000;
+  font-weight: 400;
+}
+
+@media (max-width: 576px) {
+  .search-bar {
+    padding: 0px !important;
+  }
+
+  #searchInput {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
   }
 }
 
@@ -95,8 +160,8 @@ body {
   }
 
   .nav-icon {
-    width: 26px;
-    height: 26px;
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -122,15 +187,104 @@ body {
   }
 
   .nav-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 }
 
 /* ---- Very Small (max 400px) ---- */
 @media (max-width: 400px) {
   .ubuy-logo {
-    width: 55px;
+    width: 48px;
+  }
+}
+
+
+  .explore-btn-nav {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+@media (min-width: 1440px) and (max-width: 2500px) {
+  .explore-btn-nav {
+    margin-left: 40% !important;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+    padding: 8px 12px;
+  }
+}
+
+.country-btn {
+  font-size: 12px;
+}
+
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  z-index: 999;
+}
+
+/* Each item */
+.suggestion-item {
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: #f5f5f5;
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.3); /* 🔥 darkness */
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+
+  z-index: 998;
+}
+
+/* Active state */
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Make search above overlay */
+.search-wrapper {
+  position: relative;
+  z-index: 999;
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .navbar-center {
+    max-width: 470px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-center {
+    width: 100% !important;
   }
 }
 
@@ -314,8 +468,8 @@ body {
 .explore-btn {
   background-color: transparent;
   border: none;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 14px;
   color: #000;
   padding: 8px 12px;
 }
@@ -1822,13 +1976,11 @@ body {
 .submenu-panel,
 .subsubmenu-panel {
   display: none;
-
 }
 
 .submenu-panel.active,
 .subsubmenu-panel.active {
   display: block;
-
 }
 
 .explore-left .dropdown-item,
@@ -1875,7 +2027,6 @@ body {
 }
 
 .account-dropdown-menu .dropdown-item {
-
   padding: 8px 10px !important;
   line-height: 18px;
   font-size: 13px;
@@ -1894,28 +2045,21 @@ body {
   align-items: center;
   gap: 13px;
   background-color: none;
-
 }
 
-
-.dropdown-header{
+.dropdown-header {
   font-size: 14px;
   font-weight: 700;
   color: #000;
 }
 
-
-.explore-middle .dropdown-item{
+.explore-middle .dropdown-item {
   font-weight: 500 !important;
 }
 
-.explore-left .dropdown-item{
+.explore-left .dropdown-item {
   font-weight: 600 !important;
 }
-
-
-
-
 
 /* =========================================================================================== */
 .mobile-explore-offcanvas {
@@ -1923,7 +2067,6 @@ body {
   min-width: auto;
   border-right: 1px solid #d9d9d9;
   font-family: Arial, sans-serif;
-
 }
 
 .mobile-explore-header {
@@ -1956,7 +2099,7 @@ body {
   transform: translateX(100%);
   transition: transform 0.28s ease;
   background: #fff;
-    height: 100%;
+  height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -2037,15 +2180,6 @@ body {
   margin-top: -1px;
 }
 
-
-
-
-
-
-
-
-
-
 /* ====================================================== */
 
 .mobile-country-dropdown .dropdown-toggle::after {
@@ -2062,7 +2196,7 @@ body {
     right: 0 !important;
     left: auto !important;
     transform: none !important;
-    width: 220px !important;
+    width: 170px !important;
   }
 }
 
@@ -2071,6 +2205,79 @@ body {
     right: 0 !important;
     left: auto !important;
     transform: none !important;
-    min-width: 200px;
+    min-width: 150px !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .account-toggle::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .account-dropdown-menu {
+    border: none;
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    width: 170px !important;
+  }
+}
+
+.country-menu .dropdown-item {
+  position: relative;
+  padding-right: 30px;
+}
+
+/* Tick icon */
+.country-menu .dropdown-item.active::after {
+  content: "✔";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #f4a300; /* orange like your UI */
+}
+
+.country-menu .dropdown-item.active {
+  background-color: #f1f1f1 !important; /* light grey like your design */
+  color: #000 !important;
+}
+
+.country-menu .dropdown-item:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.country-nav-menu .dropdown-item {
+  position: relative;
+  padding-right: 28px;
+}
+
+.country-nav-menu .dropdown-item.active {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
+.country-nav-menu .dropdown-item.active::after {
+  content: "✔";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #f4a300;
+}
+
+@media (max-width: 991px) {
+  .account-dropdown .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .country-nav .dropdown-toggle::after {
+    display: none !important;
   }
 }

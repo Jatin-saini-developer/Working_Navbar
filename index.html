@@ -22,15 +22,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 </head>
-<body>
-        <!-- NAVBAR -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brands_HP</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow py-1 ubuy-navbar"
+      class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow py-1 ubuy-navbar"
     >
-      <div class="container-fluid d-flex flex-wrap align-items-center">
+      <div class="container-fluid d-flex flex-wrap align-items-center py-1">
         <!-- Hamburger Button -->
         <button
-          class="btn d-lg-none order-1"
+          class="btn d-lg-none order-1 shadow-none"
           data-bs-toggle="offcanvas"
           data-bs-target="#mobileExplore"
         >
@@ -49,7 +77,7 @@
         <!-- EXPLORE MEGA DROPDOWN -->
         <div class="dropdown d-none d-lg-flex order-lg-2 explore-dropdown-wrap">
           <button
-            class="btn explore-btn dropdown-toggle d-flex align-items-center shadow-none"
+            class="btn explore-btn-nav dropdown-toggle d-flex align-items-center shadow-none"
             type="button"
             data-bs-toggle="dropdown"
             data-bs-auto-close="outside"
@@ -324,131 +352,55 @@
 
         <!-- SEARCH BAR -->
         <div
-          class="search-bar bg-light flex-grow-1 d-flex border align-items-center rounded-pill p-1 flex-grow-1 mx-3 order-4 order-lg-3 mt-2 mt-lg-0"
+          class="navbar-center bg-light flex-grow-1 d-flex align-items-center  flex-grow-1  order-4 order-lg-3  mt-lg-0 search-wrapper"
+          style="max-width: 1050px"
         >
-          <input
-            class="w-100 bg-light px-4"
-            type="text"
-            placeholder="Search From 300M+ Premium Products Around The World"
-          />
-
-          <!-- COUNTRY DROPDOWN -->
-          <div class="dropdown bg-light flex-shrink-0 country-dropdown">
-            <button
-              class="btn dropdown-toggle shadow-none country-btn"
-              type="button"
-              data-bs-toggle="dropdown"
-            >
-              <img src="https://flagcdn.com/w20/us.png" alt="US" />
-              US
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end country-menu">
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img src="https://flagcdn.com/w20/us.png" alt="US" /> US</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img src="https://flagcdn.com/w20/gb.png" alt="UK" />UK</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img src="https://flagcdn.com/w20/eu.png" alt="EU" />EU
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img
-                    src="https://flagcdn.com/w20/cn.png"
-                    alt="China"
-                  />CHINA</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img
-                    src="https://flagcdn.com/w20/jp.png"
-                    alt="Japan"
-                  />Japan</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><img
-                    src="https://flagcdn.com/w20/hk.png"
-                    alt="Hong Kong"
-                  />HongKong</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><img src="https://flagcdn.com/w20/kr.png" alt="Korea" />
-                  Korea</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- inside .search-bar div, after the dropdown ul -->
-          <button
-            class="btn rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-            style="
-              background-color: #ffb100;
-              width: 38px;
-              height: 38px;
-              padding: 0;
-            "
+          <div
+            class="search-bar bg-light flex-grow-1 d-flex border  py-2 align-items-center  rounded-pill flex-grow-1 mx-3 order-4 order-lg-3 mt-2 mt-lg-0 search-wrapper"
+            style="position: relative; background-color: #f7f7f9;"
           >
-            🔍
-          </button>
-        </div>
+            <input
+              class="w-100 bg-light px-4 border-end"
+              id="searchInput"
+              type="text"
+              placeholder="Search From 300M+ Premium Products Around The World"
+              maxlength="300"
 
-        <!-- LISTS & CART LOGO  -->
-        <div class="d-flex align-items-center ms-auto order-3 order-lg-4">
-          <ul
-            class="navbar-nav navbar-ul d-flex justify-content-between flex-row gap-3"
-          >
-            <li class="nav-item d-flex align-items-center dropdown country-nav ">
-              <img
-                src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/assets/v5/images/delivery-img.svg"
-                alt=""
-                class="nav-icon"
-              />
-              <a
-                class="nav-link  dropdown-toggle country-nav-btn"
-                href="#"
+            />
+            <div class="search-suggestions" id="suggestionsBox"></div>
+
+            <!-- COUNTRY DROPDOWN -->
+            <div class="dropdown bg-light flex-shrink-0 country-dropdown">
+              <button
+                class="btn dropdown-toggle shadow-none country-btn"
+                type="button"
                 data-bs-toggle="dropdown"
-                >
-                <span class="short-text">IN</span>
-                <span class="long-text">India</span>
-                </a
               >
-              
-              <ul class="dropdown-menu country-nav-menu">
+                <img src="https://flagcdn.com/w20/us.png" alt="US" />
+                US
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end country-menu">
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><img
-                      src="https://flagcdn.com/w20/hk.png"
-                      alt="Hong Kong"
-                    />Hong Kong</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    ><img
-                      src="https://flagcdn.com/w20/in.png"
-                      alt="India"
-                    />India</a
+                  <a class="dropdown-item" href="#">
+                    <img src="https://flagcdn.com/w20/us.png" alt="US"  /> US</a
                   >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
+                    <img src="https://flagcdn.com/w20/gb.png" alt="UK" />UK</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <img src="https://flagcdn.com/w20/eu.png" alt="EU" />EU
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
                     <img
-                      src="https://flagcdn.com/w20/id.png"
-                      alt="Indonesia"
-                    />Indonesia</a
+                      src="https://flagcdn.com/w20/cn.png"
+                      alt="China"
+                    />CHINA</a
                   >
                 </li>
                 <li>
@@ -460,7 +412,121 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="#"
+                    ><img
+                      src="https://flagcdn.com/w20/hk.png"
+                      alt="Hong Kong"
+                    />HongKong</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><img src="https://flagcdn.com/w20/kr.png" alt="Korea" />
+                    Korea</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            
+            <button
+              class="btn rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 shadow-none mx-2"
+              style="
+                background-color: #ffb100;
+                width: 38px;
+                height: 38px;
+                padding: 0;
+              "
+            >
+              <i class="fa-solid fa-magnifying-glass text-light"></i>
+            </button>
+          </div>
+          <div class="search-overlay" id="searchOverlay"></div>
+        </div>
+
+        <!-- LISTS & CART LOGO  -->
+        <div
+          class="d-flex align-items-center justify-content-between ms-auto order-3 order-lg-4 header-right mx-2"
+        >
+          <ul
+            class="navbar-nav navbar-ul d-flex justify-content-between flex-row gap-3"
+          >
+            <li
+              class="nav-item d-flex align-items-center dropdown country-nav"
+              style="position: relative"
+            >
+              <img
+                src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/assets/v5/images/delivery-img.svg"
+                alt=""
+                class="nav-icon"
+              />
+              <a
+                class="nav-link dropdown-toggle country-nav-btn"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                <span class="short-text">IN</span>
+                <span class="long-text">India</span>
+              </a>
+
+              <ul class="dropdown-menu country-nav-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="HK"
+                    data-long="Hong Kong"
+                    ><img
+                      src="https://flagcdn.com/w20/hk.png"
+                      alt="Hong Kong"
+                    />Hong Kong</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="IN"
+                    data-long="India"
+                    ><img
+                      src="https://flagcdn.com/w20/in.png"
+                      alt="India"
+                    />India</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="ID"
+                    data-long="Indonesia"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/id.png"
+                      alt="Indonesia"
+                    />Indonesia</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="JP"
+                    data-long="Japan"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/jp.png"
+                      alt="Japan"
+                    />Japan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="MY"
+                    data-long="Malaysia"
+                  >
                     <img
                       src="https://flagcdn.com/w20/my.png"
                       alt="Malaysia"
@@ -468,7 +534,11 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="MV"
+                    data-long="Maldives"
                     ><img
                       src="https://flagcdn.com/w20/mv.png"
                       alt="Maldives"
@@ -476,7 +546,12 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-short="PH"
+                    data-long="Philippines"
+                  >
                     <img
                       src="https://flagcdn.com/w20/ph.png"
                       alt="Philippines"
@@ -498,21 +573,20 @@
 
             <li
               class="nav-item d-flex align-items-center dropdown account-dropdown"
-              style="position: relative;"
+              style="position: relative"
             >
-              <img
-                src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/assets/v5/images/my-account.svg"
-                alt=""
-                class="nav-icon"
-              />
               <a
-                class="nav-link long-text dropdown-toggle"
+                class="nav-link dropdown-toggle d-flex align-items-center"
                 href="#"
                 data-bs-toggle="dropdown"
-                > Account
-                
-                </a
               >
+                <img
+                  src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/assets/v5/images/my-account.svg"
+                  alt=""
+                  class="nav-icon"
+                />
+                <span class="long-text ms-1">Account</span>
+              </a>
               <ul class="dropdown-menu dropdown-menu-end account-dropdown-menu">
                 <li class="dropdown-header">Welcome</li>
                 <li><a class="dropdown-item" href="#">Sign In</a></li>
@@ -533,11 +607,11 @@
         </div>
       </div>
     </nav>
-
     <!-- MOBILE EXPLORE MENU LOGIC -->
     <div
       class="offcanvas offcanvas-start mobile-explore-offcanvas"
-      id="mobileExplore">
+      id="mobileExplore"
+    >
       <div class="offcanvas-header mobile-explore-header">
         <h5 class="mobile-explore-title">Explore</h5>
         <button
@@ -684,7 +758,7 @@
               <span>Health &amp; Supplements</span>
             </button>
 
-            <button class="menu-row">
+            <button class="menu-row" data-target="vitaminsMenu">
               <span class="menu-left">
                 <span class="menu-text"
                   >Vitamins Minerals &amp; Supplements</span
@@ -693,14 +767,14 @@
               <span class="menu-chevron">›</span>
             </button>
 
-            <button class="menu-row">
+            <button class="menu-row" data-target="sportsMenu">
               <span class="menu-left">
                 <span class="menu-text">Sports Nutrition</span>
               </span>
               <span class="menu-chevron">›</span>
             </button>
 
-            <button class="menu-row">
+            <button class="menu-row" data-target="beautyMenu">
               <span class="menu-left">
                 <span class="menu-text">Beauty Supplements</span>
               </span>
@@ -714,14 +788,14 @@
               <span>Electronics</span>
             </button>
 
-            <button class="menu-row">
+            <button class="menu-row" data-target="mobilesMenu">
               <span class="menu-left"
                 ><span class="menu-text">Mobiles</span></span
               >
               <span class="menu-chevron">›</span>
             </button>
 
-            <button class="menu-row">
+            <button class="menu-row" data-target="laptopMenu">
               <span class="menu-left"
                 ><span class="menu-text">Laptops</span></span
               >
@@ -734,12 +808,40 @@
               <span class="back-arrow">‹</span>
               <span>Beauty &amp; Personal Care</span>
             </button>
+
+            <button class="menu-row" data-target="hairCareMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Hair Care</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row" data-target="skinCareMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Skin Care</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="fashionMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Fashion</span>
+            </button>
+
+            <button class="menu-row" data-target="clothingMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Clothing</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row" data-target="Footwear">
+              <span class="menu-left"
+                ><span class="menu-text">Footwear</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -748,12 +850,40 @@
               <span class="back-arrow">‹</span>
               <span>Home &amp; Kitchen</span>
             </button>
+
+            <button class="menu-row" data-target="homedecorMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Home Decor</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row" data-target="furnitureMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Home Furniture</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="babyEssentialsMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Baby Essentials</span>
+            </button>
+
+            <button class="menu-row" data-target="babydiaperMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Baby Diapers</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row" data-target="babyCareMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Baby Care</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -762,12 +892,40 @@
               <span class="back-arrow">‹</span>
               <span>Musical Instruments</span>
             </button>
+
+            <button class="menu-row" data-target="guitarsMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Guitars</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row" data-target="wildmusicMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Wind Musical Instruments</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="groceryMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Grocery &amp; Gourmet Food</span>
+            </button>
+
+            <button class="menu-row" data-target="beveragesMenu">
+              <span class="menu-left"
+                ><span class="menu-text">Beverages</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Snacks & Sweets</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -776,12 +934,40 @@
               <span class="back-arrow">‹</span>
               <span>Office Supplies</span>
             </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Office Electronics</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Printers & Accessories</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="sportsOutdoorMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Sports Outdoor &amp; Fitness</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Fitness & Exercise</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Active Wear</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -790,12 +976,42 @@
               <span class="back-arrow">‹</span>
               <span>Automotive</span>
             </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text"
+                  >Automotive Tools & Equipments</span
+                ></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Automotive Replacement</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="householdSuppliesMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Household Supplies</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">HouseHold Cleaning</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Laundry Supplies</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -804,12 +1020,40 @@
               <span class="back-arrow">‹</span>
               <span>Pet Supplies</span>
             </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Dog Supplies</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Cat Supplies</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="artsCraftsMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Arts Crafts &amp; Sewing</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Crafting Supplies</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Sewing Supplies</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -818,12 +1062,40 @@
               <span class="back-arrow">‹</span>
               <span>Toys &amp; Games</span>
             </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Building Toys </span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Toys Vehical</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="industrialSuppliesMenu">
             <button class="menu-back" data-back="level1">
               <span class="back-arrow">‹</span>
               <span>Industrial Supplies</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Industrial Tools</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Industrial Hardware</span></span
+              >
+              <span class="menu-chevron">›</span>
             </button>
           </div>
 
@@ -832,6 +1104,20 @@
               <span class="back-arrow">‹</span>
               <span>Books</span>
             </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Fiction Books</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Children Books</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
 
           <div class="menu-panel" id="gardeningMenu">
@@ -839,7 +1125,413 @@
               <span class="back-arrow">‹</span>
               <span>Gardening Supplies</span>
             </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Gardening & Lawn Care</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left"
+                ><span class="menu-text">Snow Removal Tools</span></span
+              >
+              <span class="menu-chevron">›</span>
+            </button>
           </div>
+
+          <!-- Level 3 -->
+          <!-- +++++++++ -->
+          <div class="menu-panel" id="vitaminsMenu">
+            <button class="menu-back" data-back="healthMenu">
+              <span class="back-arrow">‹</span>
+              <span>Vitamins minerals and suppliments</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Vitamins Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Mineral Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ++++++++++ -->
+
+          <!-- ========= -->
+          <div class="menu-panel" id="sportsMenu">
+            <button class="menu-back" data-back="healthMenu">
+              <span class="back-arrow">‹</span>
+              <span>Sports Nutrition</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Protein Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Workout Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+
+          <!-- ========= -->
+
+          <!-- ++++++++++ -->
+          <div class="menu-panel" id="beautyMenu">
+            <button class="menu-back" data-back="healthMenu">
+              <span class="back-arrow">‹</span>
+              <span>Beauty Supplements</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Collagen Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Skin-Health Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Hair-Health Supplements</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+
+          <!-- ++++++++++ -->
+
+          <!--+++++++++ -->
+          <div class="menu-panel" id="mobilesMenu">
+            <button class="menu-back" data-back="electronicsMenu">
+              <span class="back-arrow">‹</span>
+              <span>Mobiles</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Mobile Phones & Accessories</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ++++++++++ -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="laptopMenu">
+            <button class="menu-back" data-back="electronicsMenu">
+              <span class="back-arrow">‹</span>
+              <span>Laptops</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Laptop Accessories</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">All In One Laptops</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Macbooks</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ++++++++++ -->
+          <div class="menu-panel" id="hairCareMenu">
+            <button class="menu-back" data-back="beautyMenu">
+              <span class="back-arrow">‹</span>
+              <span>Hair Care</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Hair Styling Products</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Hair Color</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Hair Oil</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ++++++++++ -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="skinCareMenu">
+            <button class="menu-back" data-back="beautyMenu">
+              <span class="back-arrow">‹</span>
+              <span>Skin Care</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Body Care</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Face Care</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Lip Care</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="clothingMenu">
+            <button class="menu-back" data-back="fashionMenu">
+              <span class="back-arrow">‹</span>
+              <span>Clothing</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Men Clothing</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Women Clothing</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="Footwear">
+            <button class="menu-back" data-back="fashionMenu">
+              <span class="back-arrow">‹</span>
+              <span>Footwear</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Men Footwear</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Women Footwear</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="homedecorMenu">
+            <button class="menu-back" data-back="homeKitchenMenu">
+              <span class="back-arrow">‹</span>
+              <span>Home Decor</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Home Fragrance</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Home Mirrors</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="furnitureMenu">
+            <button class="menu-back" data-back="homeKitchenMenu">
+              <span class="back-arrow">‹</span>
+              <span>Home Furniture</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Home Bedroom Furniture</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Home Bean Bags </span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="babydiaperMenu">
+            <button class="menu-back" data-back="babyEssentialsMenu">
+              <span class="back-arrow">‹</span>
+              <span>Baby Diapers</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Disposable Diapers for baby</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Swim Diapers For Baby </span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="babyCareMenu">
+            <button class="menu-back" data-back="babyEssentialsMenu">
+              <span class="back-arrow">‹</span>
+              <span>Baby Care</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Baby Health Care </span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Baby Skin Care</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="guitarsMenu">
+            <button class="menu-back" data-back="musicalInstrumentsMenu">
+              <span class="back-arrow">‹</span>
+              <span>Guitars</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Electronic Guitars</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Acoustic Guitars </span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="wildmusicMenu">
+            <button class="menu-back" data-back="musicalInstrumentsMenu">
+              <span class="back-arrow">‹</span>
+              <span>Wind Musical Instruments</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Folk & World Music</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
+
+          <!-- ========== -->
+          <div class="menu-panel" id="beveragesMenu">
+            <button class="menu-back" data-back="groceryMenu">
+              <span class="back-arrow">‹</span>
+              <span>Beverages</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Coffee</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+
+            <button class="menu-row">
+              <span class="menu-left">
+                <span class="menu-text">Top Beverages</span>
+              </span>
+              <span class="menu-chevron">›</span>
+            </button>
+          </div>
+          <!-- ========== -->
         </div>
       </div>
     </div>
